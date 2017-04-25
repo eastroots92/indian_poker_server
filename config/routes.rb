@@ -4,10 +4,15 @@ Rails.application.routes.draw do
   
   get 'list' => 'indian#list'
   post 'list' => 'indian#createlist'
+  put 'list' => 'indian#createjoin'
+  patch 'list' => 'indian#createjoin'
   
   get 'list/new' => 'indian#list_new', as: 'new_list'
-  get 'list/:id' => 'indian#list_join', as: 'list_join'
+  get 'list/:id/edit' => 'indian#list_join', as: 'list_join'
 
+  #put 'join_game' => 'indian#createjoin'
+  #patch 'join_game' => 'indian#createjoin'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

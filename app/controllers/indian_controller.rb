@@ -24,6 +24,14 @@ class IndianController < ApplicationController
   def list_join
   end
   
+  #PATCH/PUT  /list/1
+  def createjoin
+    list = List.update(list_params)
+    list.state = "start"
+    list.save
+    redirect_to :list
+  end
+  
   def game
   end
   

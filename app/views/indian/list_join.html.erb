@@ -1,2 +1,25 @@
-<h1>Indian#list_join</h1>
-<p>Find me in app/views/indian/list_join.html.erb</p>
+<div class="container">
+    
+    <%= form_for @list, class: "form-inline", url:list_path(@list) do |l| %>
+        <%= @list.id %> <%= @list.player1 %>
+        <div class="form-group" style= "margin-top: 50px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="exampleInputName2">Player2 ID</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                     <%= l.text_field :player2, class: "form-control", id:"exampleInputName2" %>
+                </div>
+                <div class="col-md-2">
+                    <%=l.submit '게임하기' ,class: "btn btn-default"%>
+                </div>
+           
+            </div>
+        </div>
+    <% end %>
+    
+    
+    
+</div>
