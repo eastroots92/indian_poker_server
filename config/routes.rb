@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   get 'list/new' => 'indian#list_new', as: 'new_list'
   get 'list/:id/edit' => 'indian#list_join', as: 'list_join'
-  
+  get 'game/:id' => 'indian#game', as: 'game'
   
 
 

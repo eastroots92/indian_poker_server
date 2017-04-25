@@ -36,7 +36,7 @@ class IndianController < ApplicationController
     @list.update(list_params)
     @list.state = "start"
     @list.save
-    redirect_to :list
+    redirect_to game_path(@list)
   end
   
   def game
