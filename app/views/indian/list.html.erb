@@ -1,0 +1,52 @@
+<div id="console-event"></div>
+<div class="container">
+    <div class="panel panel-default" style="margin-top: 50px">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+          <div class="row" id="list_toggle">
+              <div class="col-md-10"><h4>Indian Poker List</h4></div>
+              <div class="col-md-2" style="text-align:center;"  >
+                <input sytle="margin:0 auto;" id="toggle-event" type="checkbox" data-toggle="toggle"  data-on="대기방보기" data-off="전체보기"></div>
+          </div>
+      </div>
+    
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Player1</th>
+            <th>Player2</th>
+            <th>State</th>
+            <th>Join</th>
+          </tr>
+        </thead>
+        <tbody id="checklist">
+          <% @lists.each do |l| %>
+            <tr class=<%= l.state%>>
+              <td><%= l.id %></td>
+              <td><%= l.player1%></td>
+              <td><%= l.player2%></td>
+              <td><%= l.state%></td>
+              <td><%=link_to "Join" , list_join_path(l)%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+</div>
+    
+    
+</div>
+
+
+
+<script>
+  
+  //$('#toggle-event').change(function(){
+   // alert("d");
+  //  if( $("#checklist").children().is(".ready") === false){
+   //   this.hide();
+  //  }
+  //})
+  
+</script>

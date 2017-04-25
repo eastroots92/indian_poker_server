@@ -1,0 +1,13 @@
+<div class="container">
+    
+    <%= form_for @list, class: "form-inline", url:list_path(@list) do |l| %>
+        <div class="form-group">
+            <label for="exampleInputName2">Player1 ID</label>
+            <%= l.text_field :player1, class: "form-control", id:"exampleInputName2" %>
+        </div>
+        <%=l.submit '방만들기' ,class: "btn btn-default"%>
+    <% end %>
+    
+    
+    
+</div>
