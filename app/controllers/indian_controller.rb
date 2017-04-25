@@ -1,13 +1,17 @@
 class IndianController < ApplicationController
-  before_action :join_game, only: [:list_join]
-  before_action :in_game, only: [:game]
-  
+  before_action :set_list, only: [:game ,:list_join]
+  @@id =0
   #GET list
   #GET list.json
+  def lists
+    @lists = List.all
+  end
+  
   def list
     @lists = List.all.where(state: "ready")
   end
-
+  
+  #GET list/new
   def list_new
     @list = List.new
     puts @list
@@ -22,13 +26,16 @@ class IndianController < ApplicationController
   end
   
   def list_join
+    @@id=@list.id
   end
   
   #PATCH/PUT  /list/1
   def createjoin
-    list = List.update(list_params)
-    list.state = "start"
-    list.save
+    @list_id = @@id
+    @list= List.find(@list_id)
+    @list.update(list_params)
+    @list.state = "start"
+    @list.save
     redirect_to :list
   end
   
@@ -49,7 +56,7 @@ class IndianController < ApplicationController
 
   end
   
-  def in_game
+  def set_list
     @list= List.find(params[:id])
   end
   

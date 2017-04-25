@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   
   root 'indian#list'
-  
+  get 'lists' => 'indian#lists'
   get 'list' => 'indian#list'
   post 'list' => 'indian#createlist'
+
   put 'list' => 'indian#createjoin'
   patch 'list' => 'indian#createjoin'
   
   get 'list/new' => 'indian#list_new', as: 'new_list'
   get 'list/:id/edit' => 'indian#list_join', as: 'list_join'
+  
+  
+
 
   #put 'join_game' => 'indian#createjoin'
   #patch 'join_game' => 'indian#createjoin'

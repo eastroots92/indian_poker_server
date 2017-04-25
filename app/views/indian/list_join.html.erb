@@ -1,8 +1,8 @@
 <div class="container">
-    
-    <%= form_for @list, class: "form-inline", url:list_path(@list) do |l| %>
-        <%= @list.id %> <%= @list.player1 %>
+    <%= form_for @list, class: "form-inline", url:list_path(@list), method: :patch do |l| %>
+
         <div class="form-group" style= "margin-top: 50px;">
+            
             <div class="row">
                 <div class="col-md-12">
                     <label for="exampleInputName2">Player2 ID</label>
