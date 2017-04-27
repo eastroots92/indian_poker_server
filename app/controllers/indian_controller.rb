@@ -40,6 +40,11 @@ class IndianController < ApplicationController
   end
   
   def game
+    if @list.state == "start"
+      @state = "게임준비완료"
+    else 
+      @state = "플레이어 2 대기중"
+    end
   end
   
   private
@@ -58,6 +63,7 @@ class IndianController < ApplicationController
   
   def set_list
     @list= List.find(params[:id])
+    
   end
   
   def list_params
